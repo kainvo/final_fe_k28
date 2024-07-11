@@ -29,11 +29,7 @@ function Layout() {
             <div style={{
                 display: 'flex',
                 justifyContent:'space-between',
-                alignItems: 'center',
-                // gap: 10,
-                // width: '100%',
-                // height: '100%',
-                // padding: '0 20px'
+                alignItems: 'center'
             }}>
                 <Link style={{
                 color: 'white'
@@ -46,33 +42,36 @@ function Layout() {
                 />
         
                 {
-                user?.email && (<div style={{
-                    display: 'flex',
-                    justifyContent:'flex-end',
-                    alignItems: 'center',
-                    gap: 5
-                }}>
-                    {
-                    user?.role === "admin" &&
-                    <Link
-                        style={{
-                        color: 'white',
-                        cursor: 'pointer'
-                        }}
-                        title='Edit movie'
-                        to='/admin' className='fa-solid fa-pen-to-square'
-                    />
-                    }
-                    <button style={{
-                    cursor: 'pointer'
-                    }} 
-                    title='logout' 
-                    onClick={handleLogout} 
-                    className='fa-solid fa-right-from-bracket' />
-                </div>)
+                    user?.email && (
+                    <div style={{
+                        display: 'flex',
+                        justifyContent:'flex-end',
+                        alignItems: 'center',
+                        gap: 5
+                    }}>
+                        {
+                        user?.role === "admin" &&
+                        <Link
+                            style={{
+                            color: 'white',
+                            cursor: 'pointer'
+                            }}
+                            title='Edit movie'
+                            to='/admin' className='fa-solid fa-pen-to-square'
+                        />
+                        }
+                        <button 
+                            style={{
+                            cursor: 'pointer'
+                            }} 
+                            title='logout' 
+                            onClick={handleLogout} 
+                            className='fa-solid fa-right-from-bracket' 
+                        />
+                    </div>
+                    )
                 }
-            </div>
-            
+            </div>            
           </header>
         </div>
       )
