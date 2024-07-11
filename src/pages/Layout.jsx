@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { getLoggedInUser, logout } from '../redux/auth/authSlice'
 import { Cursor } from 'mongoose'
 import { removeMovie, removeMovies } from '../redux/movie/movieSlice'

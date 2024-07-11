@@ -3,7 +3,7 @@ import authReducer from './auth/authSlice'
 import movieReducer from './movie/movieSlice'
 import { thunk } from "redux-thunk";
 import { combineReducers } from "@reduxjs/toolkit";
-import { persistStore, persistReducer } from "redux-persist/es/persistStore";
+import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 //rootReducer
@@ -19,12 +19,14 @@ const persistConfig = {
 }
 
 // create persist reducer
-const persistReducer = combineReducers(persistConfig, rootReducer);
+const persistReducerRoot = persistReducer(persistConfig, rootReducer);
 
 //create redux store
 export const store = configureStore({
-    reducer: persistReducer,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk)
+    reducer: persistReducerRoot,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+        serializableCheck: false
+    }).concat(thunk)
 })
 
 //create persisttor

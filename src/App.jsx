@@ -6,8 +6,9 @@ import PrivateRoute from './routes/PrivateRoute'
 import HomePage from './pages/movie/HomePage'
 import MovieDetailPage from './pages/movie/MovieDetailPage'
 import DashboardAdmin from './pages/user/DashboardAdmin'
-import Login from './pages/user/login'
+import Login from './pages/user/Login'
 import Register from './pages/user/Register'
+import PageNotFound from './components/PageNotFound/PageNotFound'
 function App() {
 
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path='./login' element={<Login />} />
           <Route path='./register' element={<Register />} />
         </Route>
-        
+
         <Route path='*' element={<PageNotFound />} />
       </Routes>
         
