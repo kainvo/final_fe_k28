@@ -1,28 +1,26 @@
-//rfce
 import React from 'react'
-import './MovieCard.scss'
 import { Link } from 'react-router-dom'
+import './MovieCard.scss'
 
-function MovieCard( movie ) {
-    const { id, title, year, poster } = movie
+function MovieCard({ movie }) {
+  const { _id, title, year, poster } = movie
+  
   return (
-    <div>
-        <Link to={`/movie/${id}`}>
-           <div className='card-item'>
-             <div className='card-inner'>
-                <div className='card-top'>
-                    <img src={poster} alt={title} />
-                </div>
-                <div className='card-bottom'>
-                    <div className='card-info'>
-                        <h4>{title}</h4>
-                        <p>{year}</p>
-                    </div>
-                </div>
-             </div>
-           </div>
-        </Link>
-    </div>
+    <Link to={`/movies/${_id}`}>
+      <div className='card-item'>
+        <div className='card-inner'>
+          <div className='card-top'>
+            <img src={poster} alt={title} />
+          </div>
+          <div className='card-bottom'>
+            <div className='card-info'>
+              <h4>{title}</h4>
+              <p>{year}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Link>
   )
 }
 

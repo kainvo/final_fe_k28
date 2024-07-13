@@ -1,0 +1,18 @@
+@import "../../common/component.scss";
+
+.resister-container {
+    margin-top: 10px;
+}
+
+.btn-register {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    max-width: max-content;
+    margin: 0 auto;
+
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+}
